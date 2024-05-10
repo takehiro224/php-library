@@ -24,24 +24,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>新人研修あるある</td>
-                            <td>山田太郎</td>
-                            <td>みすず書房</td>
-                            <td><button>削除</button></td>
-                        </tr>
-                        <tr>
-                            <td>こんなDBエンジニアは嫌だ</td>
-                            <td>佐藤花子</td>
-                            <td>みすず書房</td>
-                            <td><button>削除</button></td>
-                        </tr>
-                        <tr>
-                            <td>本当にあったIT業界トラブル</td>
-                            <td>鈴木一郎</td>
-                            <td>みすず書房</td>
-                            <td><button>削除</button></td>
-                        </tr>
+                        <?php foreach ($data as $row) { ?>
+                            <tr>
+                                <td><?php echo $row["title"]; ?></td>
+                                <td><?php echo $row["author"]; ?></td>
+                                <td><?php echo $row["publisher_name"]; ?></td>
+                                <td><button>削除</button></td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
