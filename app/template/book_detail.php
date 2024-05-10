@@ -43,7 +43,7 @@
                 </table>
             </div>
             <div>
-                <button>キャンセル</button>
+                <button>戻る</button>
                 <button>更新</button>
             </div>
         </div>
