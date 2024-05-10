@@ -43,9 +43,14 @@
                 </table>
             </div>
             <div>
-                <button>戻る</button>
+                <button onClick="goBack()">戻る</button>
                 <button>更新</button>
             </div>
         </div>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </body>
 </html>
