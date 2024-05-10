@@ -30,7 +30,7 @@
 |No|役割|メソッド|URL|アクセス|
 |:--|:--|:--|:--|:--|
 |1|一覧画面表示|GET|/book|http://localhost:8088/htdocs/book.php|
-|2|詳細画面表示|GET|/book/{id}||
+|2|詳細画面表示|GET|/book_detail/{id}||
 |3|登録画面表示|GET|/book/form||
 |4|登録処理|POST|/book/create||
 |5|更新画面表示|GET|/book/edit/{id}||
