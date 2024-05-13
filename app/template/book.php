@@ -35,7 +35,7 @@
                                 <td><?php echo $row["author"]; ?></td>
                                 <td><?php echo $row["publisher_name"]; ?></td>
                                 <td>
-                                    <button onclick="deleteUser('<?php echo $row["id"]; ?>');">削除</button>
+                                    <button name="delete" onclick="deleteUser('<?php echo $row["id"]; ?>');">削除</button>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -45,6 +45,7 @@
         </div>
         <form action="book.php" name="delete_form" method="POST">
             <input type="hidden" name="id" value="" />
+            <input type="hidden" name="delete" value="" />
         </form>
         <script>
             function deleteUser(id) {

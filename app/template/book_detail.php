@@ -43,8 +43,13 @@
                 </table>
             </div>
             <div>
+                <form action="/htdocs/edit.php" method="post" name="detail">
+                    <input type="hidden" name="detail" value="<?php echo htmlspecialchars(json_encode($data), ENT_QUOTES, 'UTF-8'); ?>">
+                    <button type="submit">更新</button>
+                </form>
+            </div>
+            <div>
                 <button onClick="goBack()">戻る</button>
-                <button>更新</button>
             </div>
         </div>
         <script>
