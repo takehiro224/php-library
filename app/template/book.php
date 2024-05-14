@@ -3,6 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
         <title>書籍一覧</title>
+        <link rel="stylesheet" href="../htdocs/css/style.css">
     </head>
     <body>
         <div id="header">
@@ -15,17 +16,17 @@
         <div id="main">
             <h3 id="title">書籍一覧画面</h3>
             <div>
-                <table border="1">
+                <table class="table_design01">
                     <thead>
                         <tr>
                             <th>タイトル</th>
                             <th>著者</th>
                             <th>出版社</th>
-                            <td>
+                            <th>
                                 <form action="/htdocs/form.php" method="get">
                                     <button type="submit">登録</button>
                                 </form>
-                            </td>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,8 +35,8 @@
                                 <td><a href=<?php echo "/htdocs/book_detail.php?id=" . $row["id"] ?>><?php echo $row["title"]; ?></a></td>
                                 <td><?php echo $row["author"]; ?></td>
                                 <td><?php echo $row["publisher_name"]; ?></td>
-                                <td>
-                                    <button name="delete" onclick="deleteUser('<?php echo $row["id"]; ?>');">削除</button>
+                                <td class="function_button">
+                                    <button style="width: 100%;" name="delete" onclick="deleteUser('<?php echo $row["id"]; ?>');">削除</button>
                                 </td>
                             </tr>
                         <?php } ?>
