@@ -4,6 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
         <title>書籍一覧</title>
         <link rel="stylesheet" href="../htdocs/css/style.css">
+        <script src="../htdocs/js/book.js" defer></script>
     </head>
     <body>
         <div id="header">
@@ -36,7 +37,7 @@
                                 <td><?php echo $row["author"]; ?></td>
                                 <td><?php echo $row["publisher_name"]; ?></td>
                                 <td class="function_button">
-                                    <button style="width: 100%;" name="delete" onclick="deleteUser('<?php echo $row["id"]; ?>');">削除</button>
+                                    <button style="width: 100%;" name="delete" onclick="deleteUser('<?php echo $row["id"]; ?>', '<?php echo $row["title"]; ?>');">削除</button>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -48,11 +49,5 @@
             <input type="hidden" name="id" value="" />
             <input type="hidden" name="delete" value="" />
         </form>
-        <script>
-            function deleteUser(id) {
-                document.delete_form.id.value = id;
-                document.delete_form.submit();
-            }
-        </script>
     </body>
 </html>
