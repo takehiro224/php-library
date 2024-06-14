@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
-
+// 共通部分の読込
+require_once(dirname(__DIR__) . "/library/common.php");
 require_once(dirname(__DIR__) . "/library/database_access.php");
 
 if(mb_strtolower($_SERVER['REQUEST_METHOD']) === 'post') {
@@ -10,6 +11,7 @@ if(mb_strtolower($_SERVER['REQUEST_METHOD']) === 'post') {
         $dateTime = new DateTime($data['created']);
         // date()関数を使用して、datetime-local形式の文字列に変換する
         $formattedDateTime = $dateTime->format('Y-m-d\TH:i');
+        writeLog("【表示】更新画面");
         require_once(dirname(__DIR__) . "/template/edit.php");
     } else {
         $id = empty($_POST['id']) ? '1' : $_POST['id'];
@@ -19,7 +21,8 @@ if(mb_strtolower($_SERVER['REQUEST_METHOD']) === 'post') {
         $author = empty($_POST['author']) ? 'Mike' : $_POST['author'];
         $publisher_name = empty($_POST['publisher_name']) ? '岩波書店' : $_POST['publisher_name'];
         $created = empty($_POST['created']) ? '2024-05-10T16:10' : $_POST['created'];
-        DatabaseAccess::update($id, $title, $isbn, $price, $author, $publisher_name, $created);
+        writeLog("【処理】更新実行");
+        DatabaseAccess::update($id, $title, $isbn, $price, $author, $publisher_name, $created);        
         require_once(dirname(__DIR__) . "/htdocs/book.php");
     }
 }
