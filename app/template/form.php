@@ -5,6 +5,9 @@
         <title>書籍登録</title>
     </head>
     <body>
+        <?php if(!empty($error_message)) { ?>
+            <div><?php echo $error_message?></div>
+        <?php } ?>
         <div id="header">
             <h1>
                 <div class="clearfix">
@@ -35,16 +38,9 @@
                 </div>
                 <div>
                     <input type="submit" value="登録">
+                    <input type="button" value="戻る" onclick="location.href='book.php'; return false;">
                 </div>
             </form>
-            <div>
-                <button onClick="goBack()">戻る</button>
-            </div>
         </div>
-        <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
     </body>
 </html>

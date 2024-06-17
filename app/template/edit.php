@@ -6,6 +6,9 @@
     </head>
     <body>
         <div id="header">
+            <?php if(!empty($error_message)) { ?>
+                <div><?php echo $error_message?></div>
+            <?php } ?>
             <h1>
                 <div class="clearfix">
                     <div class="fl">書籍管理システム</div>
@@ -34,18 +37,11 @@
                     発行日: <input type="datetime-local" name="created" value=<?php echo $formattedDateTime; ?>>
                 </div>
                 <div>
-                    <input type="hidden" name="id" value=<?php echo $data['id']; ?>>
+                    <input type="hidden" name="data" value="<?php echo htmlspecialchars(json_encode($data), ENT_QUOTES, 'UTF-8'); ?>">
                     <input type="submit" name="update" value="更新">
+                    <input type="button" value="戻る" onclick="location.href='book_detail.php?id=<?php echo $id ?>'; return false;">
                 </div>
             </form>
-            <div>
-                <button onClick="goBack()">戻る</button>
-            </div>
         </div>
-        <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
     </body>
 </html>
